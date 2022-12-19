@@ -61,10 +61,13 @@ Also note that I use a custom font which I will describe in the next session.
 
 ```yaml
 window:
+  dimensions:
+    columns: 235
+    lines: 61
   padding:
     x: 5
     y: 5
-    startup_mode: Maximized
+  startup_mode: Windowed
   class:
     instance: Alacritty
     general: Alacritty
@@ -131,6 +134,13 @@ live_config_reload: true
 # Shell
 shell:
   program: /bin/zsh
+
+# Key bindings
+key_bindings:
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Q, mods: Control, action: Quit }
 ```
 
 ### Fonts

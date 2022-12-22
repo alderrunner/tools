@@ -38,6 +38,7 @@ You should be able to get these packages from your preferred package manager:
 
 - xclip
 - curl
+- git
 
 ## Alacritty
 

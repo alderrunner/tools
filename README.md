@@ -49,6 +49,14 @@ They recommend to install `xclip`.
 
 The installation is not complicated because Alacritty can be found in most package managers.
 
+For Ubuntu do the following:
+
+```
+sudo add-apt-repository ppa:aslatter/ppa
+sudo apt update
+sudo apt install alacritty
+```
+
 ### Configuration
 
 The recommended location is `$XDG_CONFIG_HOME/alacritty/alacritty.yml`.

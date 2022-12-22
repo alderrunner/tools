@@ -16,7 +16,7 @@ To use my `shell` scripts and to use the tools to their full potential you shoul
 **Set the following environment variables:**
 
 My best way for Ubuntu was to create `*.conf` files in `$HOME/.config/environment.d/`.
-To load the new environment variables you need to log out and back in.
+To load the new environment variables restart your system.
 
 In `$HOME/.config/environment.d/xdg_home.conf`:
 
@@ -44,7 +44,6 @@ You should be able to get these packages from your preferred package manager:
 
 I use this terminal emulator because it is fast, minimal and I can use it on basically every distro.
 You can configure it in a YAML file (`alacritty.yml`). On the [Alacritty GitHub](https://github.com/alacritty/alacritty) site, you can get a config file which explains many options.
-They recommend to install `xclip`.
 
 ### Installation
 
@@ -189,7 +188,7 @@ To install `zsh` you can use your package manager.
 
 To install `zap` execute `sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)`.
 
-To make `zsh` your default shell execute `chsh -s /bin/zsh`. Log out to make the changes effective.
+To make `zsh` your default shell execute `chsh -s /bin/zsh`.
 
 ### Configuration
 
@@ -240,8 +239,8 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # vim
-alias vi='nvim'
-alias vim='nvim'
+#alias vi='nvim'
+#alias vim='nvim'
 
 # python
 alias python='python3'

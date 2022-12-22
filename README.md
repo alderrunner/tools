@@ -191,5 +191,96 @@ To install `zap` execute `sh <(curl -s https://raw.githubusercontent.com/zap-zsh
 To make `zsh` your default shell execute `chsh -s /bin/zsh`. Log out to make the changes effective.
 
 ### Configuration
-<!--- TODO --->
+
+Add this to your `.zshrc`:
+
+```
+# source
+plug "$HOME/.config/zsh/exports.zsh"
+plug "$HOME/.config/zsh/aliases.zsh"
+plug "$HOME/.config/zsh/history.zsh"
+
+# plugins
+plug "zap-zsh/atmachine-prompt"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-autosuggestions"
+
+# keybinds
+bindkey '^ ' autosuggest-accept
+
+export PATH="$HOME/.local/bin":$PATH
+```
+
+To keep your `.zshrc` clean you group settings into additional files.
+
+For the exports (`exports.zsh`):
+
+```
+#!/bin/sh
+
+export EDITOR='nvim'
+export TERMINAL='alacritty'
+export BROWSER='firefox'
+```
+
+For the aliases (`aliases.zsh`):
+
+```
+#!/bin/sh
+
+# colorize grep output (good for log files)
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# confirm before overwriting something
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# vim
+alias vi='nvim'
+alias vim='nvim'
+
+# python
+alias python='python3'
+alias pycharm='./programs/pycharm-community-2022.3/bin/pycharm.sh > $XDG_CACHE_HOME/pycharm.log 2>&1 &'
+
+# other
+alias x='exit'
+alias shutdown='shutdown -h now'
+
+# OS specific aliases
+case "$(uname -s)" in
+
+Darwin)
+	# echo 'Mac OS X'
+	alias ls='ls -G'
+	;;
+
+Linux)
+	alias ls='ls --color=auto'
+	;;
+
+CYGWIN* | MINGW32* | MSYS* | MINGW*)
+	# echo 'MS Windows'
+	;;
+*)
+	# echo 'Other OS'
+	;;
+esac
+```
+
+For the history (`history.zsh`):
+
+```
+#!/bin/sh
+
+# history
+export HISTFILE="$HOME/.local/share/zsh_history"
+export HISTFILESIZE=10000
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt appendhistory
+```
 

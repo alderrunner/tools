@@ -12,7 +12,6 @@ alias rm='rm -i'
 
 # vim
 alias vi='nvim'
-alias vim='nvim'
 
 # python
 alias python='python3'
@@ -21,6 +20,8 @@ alias pycharm='./programs/pycharm-community-2022.3/bin/pycharm.sh > $XDG_CACHE_H
 # other
 alias x='exit'
 alias shutdown='shutdown -h now'
+alias bat='batcat'
+alias fd='fdfind'
 
 # OS specific aliases
 case "$(uname -s)" in

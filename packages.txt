@@ -1,5 +1,6 @@
 bat
 exa
+fd
 fzf
 nala
 ripgrep
